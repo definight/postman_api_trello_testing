@@ -27,5 +27,7 @@ jobs:
           npm install -g newman
           
       - name: Run a collection
-        run: |
-          $ newman run postman_api_trello_testing/trelloCol.json -e trelloEnv.json
+      - uses: matt-ball/newman-action@master
+        with:
+          collection: trelloCol.json
+          environment: trelloEnv.json
