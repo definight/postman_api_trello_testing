@@ -30,4 +30,4 @@ jobs:
         run: npm install -g newman-reporter-htmlextra
         
       - name: Run a collection
-        run: newman run https://github.com/definight/postman_api_trello_testing/trelloCol.json -e https://github.com/definight/postman_api_trello_testing/trelloEnv.json -r htmlextra
+        run: newman run trelloCol.json -e trelloEnv.json -r htmlextra
