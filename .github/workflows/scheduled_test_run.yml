@@ -27,8 +27,8 @@ jobs:
           npm install -g newman
         
       - name: Runs a collection
-      - uses: actions/checkout@v3
-      - uses: definight/postman_api_trello_testing@main
+        uses: actions/checkout@v3
+        uses: definight/postman_api_trello_testing@main
         with: 
           collection: trelloCol.json
           environment: trelloEnv.json
