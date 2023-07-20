@@ -1,16 +1,27 @@
-name: Newman Run
+# This is a basic workflow to help you get started with Actions
 
+name: Scheduled test run
+
+# Controls when the workflow will run
 on:
   schedule: 
       - cron: 30 15 * * 1-5 
-
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  newman:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v3
-      - uses: definight/postman_api_trello_testing@master
-        with:
-          apiKey: ${{ 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 }}
-          collection: trelloCol.json
-          environment: trelloEnv.json
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Pull tests from Github 
+        uses: actions/checkout@v3
+      
+      - name: Use Node.js  
+        uses: actions/setup-node@v3
+      # Runs a single command using the runners shell
+      - name: Install Newman
+        run: | 
+          npm install -g newman
