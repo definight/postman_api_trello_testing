@@ -27,7 +27,8 @@ jobs:
           npm install -g newman
           
       - name: Install Newman Reporter Extra
-        run: npm install -g newman-reporter-htmlextra
+        run: |
+          npm install -g newman-reporter-htmlextra
         
       - name: Runs a collection
       - uses: actions/checkout@master
