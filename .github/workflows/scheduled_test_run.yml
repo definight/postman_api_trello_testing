@@ -25,9 +25,3 @@ jobs:
       - name: Install Newman
         run: | 
           npm install -g newman
-          
-      - name: Run a collection
-        uses: matt-ball/newman-action@master
-        with:
-          collection: trelloCol.json
-          environment: trelloEnv.json
