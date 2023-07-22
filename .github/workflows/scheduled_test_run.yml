@@ -31,11 +31,10 @@ jobs:
 
       - name: Run a collection
         run: | 
-          newman run "postman_api_trello_testing/trelloCol.json" -e "postman_api_trello_testing/trelloEnv.json" -r htmlextra --reporter-htmlextra-export htmlReportExtra/report.html
+          "newman run postman_api_trello_testing/trelloCol.json -e postman_api_trello_testing/trelloEnv.json -r htmlextra --reporter-htmlextra-export htmlReportExtra/report.html"
           
       - name: Publish the report
         uses: actions/upload-artifact@v3
         with:
           name: Reports
           path: htmlReportExtra
-      
