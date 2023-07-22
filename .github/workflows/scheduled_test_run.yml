@@ -5,7 +5,7 @@ name: Scheduled test run
 # Controls when the workflow will run
 on:
   schedule: 
-      - cron: 00 20 * * 1-5 
+      - cron: 00 14 * * 1-5 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -32,7 +32,7 @@ jobs:
 
       - name: Run a collection
         run: | 
-          newman run "postman_api_trello_testing/trelloCol.json" -e "postman_api_trello_testing/trelloEnv.json" -r htmlextra --reporter-htmlextra-export htmlReportExtra/report.html
+          newman run postman_api_trello_testing/trelloCol.json -e postman_api_trello_testing/trelloEnv.json -r htmlextra --reporter-htmlextra-export htmlReportExtra/report.html
           
       - name: Publish the report
         uses: actions/upload-artifact@v3
