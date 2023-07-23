@@ -31,7 +31,7 @@ jobs:
 
       - name: Run a collection
         run: | 
-          newman run trelloCol.json -e trelloEnv.json -r htmlextra --reporter-htmlextra-export htmlReportExtra/report.html
+          newman run "trelloCol.json" -e "trelloEnv.json" -r htmlextra --reporter-htmlextra-export htmlReportExtra/report.html
           
       - name: Publish the report
         uses: actions/upload-artifact@v3
