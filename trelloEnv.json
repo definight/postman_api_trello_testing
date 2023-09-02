@@ -3,7 +3,7 @@
 	"name": "Trello_env",
 	"values": [
 		{
-			"key": "baserl",
+			"key": "baseurl",
 			"value": "https://api.trello.com/1",
 			"type": "default",
 			"enabled": true
